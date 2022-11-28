@@ -14,7 +14,7 @@ composer require yudhatp/laravel-helpers
 
 ```php
 use Yudhatp\Helpers\Helpers;
-Helpers::terbilang(2000); //Dua Ribu
+Helpers::terbilang("2000"); //Dua Ribu
 Helpers::indonesianMonthName("2022-11-28"); //28 November 2022
 Helpers::indonesianShortMonthName("2022-11-28"); //28 Nov 2022
 ```
