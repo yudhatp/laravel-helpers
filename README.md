@@ -1,6 +1,6 @@
 # Laravel Helpers
 
-Collection of (9) helper functions for laravel.
+Collection of (12) helper functions for laravel.
 
 ## Installation
 
@@ -14,15 +14,25 @@ composer require yudhatp/laravel-helpers
 
 ```php
 use Yudhatp\Helpers\Helpers;
-Helpers::terbilang("2000"); //Dua Ribu
-Helpers::indonesianMonthName("2022-11-28"); //28 November 2022
-Helpers::indonesianShortMonthName("2022-11-28"); //28 Nov 22
+
+//date helpers
+Helpers::indonesianDate("2022-11-28"); //28 November 2022
+Helpers::indonesianShortDate("2022-11-28"); //28 Nov 22
+Helpers::indonesianDayName("2022-11-29"); //Selasa
+Helpers::indonesianMonthName("2022-11-29"); //November
 Helpers::getAgeIndonesian("1945-08-17"); //77 Tahun, 3 Bulan, 12 Hari
 Helpers::isWeekend("2022-11-29"); //false
-Helpers::generatePassword(8); //EPp218kR
-Helpers::indonesianFormatDecimal("2.100,00"); //2100.00
 Helpers::addDays("2022-11-28",2); //2022-11-30
+
+//number helpers
+Helpers::terbilang("2000"); //Dua Ribu
+Helpers::indonesianFormatDecimal("2,000.50"); //2.000,50
+
+//other helpers
 Helpers::indonesianPoliceNumberformat("B123XYZ"); //B 123 XYZ
+Helpers::generatePassword(8); //EPp218kR
+Helpers::filenameWithTimestamp("test","jpg"); //1669704266_test.jpg
+Helpers::randomHexColor(); //#D15AF0
 
 //blade
 {{ (new \Yudhatp\Helpers\Helpers)->indonesianMonthName("2022-11-28") }}
@@ -34,7 +44,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Credits
 
-- [@matriphe](https://https://gist.github.com/matriphe/3103ec578ec556bad5047b378520f070)
+- indonesianPoliceNumberformat - [@matriphe](https://https://gist.github.com/matriphe/3103ec578ec556bad5047b378520f070) 
 
 
 ## License

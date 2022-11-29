@@ -8,7 +8,27 @@ use DateTime;
 class Helpers
 {
 
-	//source from https://https://gist.github.com/matriphe/3103ec578ec556bad5047b378520f070
+	public static function randomHexColor(){
+		return '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
+	}
+	
+	public static function filenameWithTimestamp($name, $extention){
+		$timestamp = time();
+        return $timestamp. "_" . $name . ".".$extention;
+	}
+
+	public static function indonesianMonthName($date) {
+        $tmp = date_format(new DateTime($date),"n");
+        $month = array (1 =>   'Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember');
+        return $month[$tmp];
+    }
+
+	public static function indonesianDayName($date) {
+        $tmp = date_format(new DateTime($date),"w");
+        $day = array (1 =>   'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu');
+        return $day[$tmp];
+    }
+
 	public static function indonesianPoliceNumberformat($string)
 	{
 	  $string = strtoupper(trim($string));  
@@ -26,18 +46,20 @@ class Helpers
 	  
 	  return null;
 	}
-	
+
 	public static function addDays($date, $day){
 		return Carbon::createFromFormat('Y-m-d',$date)->addDays($day)->toDateString();
 	}
-	
+
 	public static function indonesianFormatDecimal($number){
-        $temp = str_replace('.','',$number);
+        $temp = str_replace('.','-',$number);
         $temp = str_replace(',','.',$temp);
+		$temp = str_replace('-',',',$temp);
         return $temp;
     }
 
-	public static function generatePassword($char) {
+	public static function generatePassword($char)
+    {
         $tmp = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
   		return substr(str_shuffle($tmp), 0, $char);
     }
@@ -60,8 +82,7 @@ class Helpers
         $day        = $diff->d;
 		return $year." Tahun, ".$month." Bulan, ".$day." Hari";
 	}
-
-    public static function indonesianMonthName($date) {
+    public static function indonesianDate($date) {
         $date = date_create($date);
         $month = date_format($date,"n");
         $day = date_format($date,"d");
@@ -70,7 +91,7 @@ class Helpers
         return $day.' '.$name[$month].' '.$year;
     }
 
-    public static function indonesianShortMonthName($date) {
+    public static function indonesianShortDate($date) {
         $date = date_create($date);
         $month = date_format($date,"n");
         $day = date_format($date,"d");
