@@ -51,6 +51,13 @@ class Helpers
 		return Carbon::createFromFormat('Y-m-d',$date)->addDays($day)->toDateString();
 	}
 
+	public static function calcIDFormatDecimal($number){
+        $temp = str_replace('.','-',$number);
+        $temp = str_replace(',','.',$temp);
+		$temp = str_replace('-','',$temp);
+        return $temp;
+    }
+
 	public static function indonesianFormatDecimal($number){
         $temp = str_replace('.','-',$number);
         $temp = str_replace(',','.',$temp);

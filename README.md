@@ -1,6 +1,6 @@
 # Laravel Helpers
 
-Collection of (12) helper functions for laravel.
+Collection of (14) helper functions for laravel.
 
 ## Installation
 
@@ -15,7 +15,7 @@ composer require yudhatp/laravel-helpers
 ```php
 use Yudhatp\Helpers\Helpers;
 
-//date helpers
+//date helpers (7)
 Helpers::indonesianDate("2022-11-28"); //28 November 2022
 Helpers::indonesianShortDate("2022-11-28"); //28 Nov 22
 Helpers::indonesianDayName("2022-11-29"); //Selasa
@@ -24,11 +24,12 @@ Helpers::getAgeIndonesian("1945-08-17"); //77 Tahun, 3 Bulan, 12 Hari
 Helpers::isWeekend("2022-11-29"); //false
 Helpers::addDays("2022-11-28",2); //2022-11-30
 
-//number helpers
+//number helpers (3)
 Helpers::terbilang("2000"); //Dua Ribu
 Helpers::indonesianFormatDecimal("2,000.50"); //2.000,50
+Helpers::calcIDFormatDecimal("2,000,000.50"); //2000000.50
 
-//other helpers
+//other helpers (4)
 Helpers::indonesianPoliceNumberformat("B123XYZ"); //B 123 XYZ
 Helpers::generatePassword(8); //EPp218kR
 Helpers::filenameWithTimestamp("test","jpg"); //1669704266_test.jpg
