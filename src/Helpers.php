@@ -8,6 +8,29 @@ use DateTime;
 class Helpers
 {
 
+	function isPrime($number) {
+		if ($number <= 1) {
+			return false;
+		}
+		for ($i = 2; $i <= sqrt($number); $i++) {
+			if ($number % $i == 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	function isPalindrome($str) {
+		$str = preg_replace("/[^a-zA-Z0-9]/", "", strtolower($str));
+		$reverse_str = strrev($str);
+		
+		if ($str == $reverse_str) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public static function randomHexColor(){
 		return '#' . substr(str_shuffle('ABCDEF0123456789'), 0, 6);
 	}

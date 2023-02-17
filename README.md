@@ -1,6 +1,6 @@
 # Laravel Helpers
 
-Collection of (14) helper functions for laravel.
+Collection of (16) helper functions for Laravel 6.x, 7.x, 8.x, 9.x, 10,x.
 
 ## Installation
 
@@ -24,10 +24,14 @@ Helpers::getAgeIndonesian("1945-08-17"); //77 Tahun, 3 Bulan, 12 Hari
 Helpers::isWeekend("2022-11-29"); //false
 Helpers::addDays("2022-11-28",2); //2022-11-30
 
-//number helpers (3)
+//number helpers (4)
 Helpers::terbilang("2000"); //Dua Ribu
 Helpers::indonesianFormatDecimal("2,000.50"); //2.000,50
 Helpers::calcIDFormatDecimal("2,000,000.50"); //2000000.50
+Helpers::isPrime(2); //true
+
+//string helpers(1)
+Helpers::isPalindrome("level"); //true
 
 //other helpers (4)
 Helpers::indonesianPoliceNumberformat("B123XYZ"); //B 123 XYZ
