@@ -48,6 +48,7 @@ class Helpers
 
 	public static function indonesianDayName($date) {
         $tmp = date_format(new DateTime($date),"w");
+		$tmp = ($tmp == 0) ? 7 : $tmp;
         $day = array (1 =>   'Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu');
         return $day[$tmp];
     }
