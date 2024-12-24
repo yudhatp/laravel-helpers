@@ -158,4 +158,14 @@ class Helpers
 		}     
 		return $temp;
 	}
+
+	public static function dateRanges($startDate, $endDate, &$dates = array()) {
+		$dates[] = $startDate;
+		$nextDate = date('Y-m-d', strtotime($startDate . ' +1 day'));
+		if ($nextDate <= $endDate) {
+			self::dateRanges($nextDate, $endDate, $dates);
+		}
+		return $dates;
+	}
+
 }

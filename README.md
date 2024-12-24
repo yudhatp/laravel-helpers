@@ -1,6 +1,6 @@
 # Laravel Helpers
 
-Collection of (16) helper functions for Laravel 6.x, 7.x, 8.x, 9.x, 10,x.
+Collection of (16) helper functions for Laravel
 
 ## Installation
 
